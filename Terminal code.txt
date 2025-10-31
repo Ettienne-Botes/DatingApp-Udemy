@@ -38,3 +38,9 @@ ng new client
 
 /create a sapplication with styles but run this command from client
 ng serve
+
+/install tailwind inthe project, make sure in the client file location
+npm install tailwindcss @tailwindcss/vite
+
+/in API run the following
+dotnet ef migrations add UserEntityUpdated
