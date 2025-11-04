@@ -42,7 +42,7 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
 
         using var hmac = new HMACSHA512(user.PasswordSalt);
 
-        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password != null ? loginDto.Password : ""));
 
         for (var i = 0; i < computedHash.Length; i++)
         {
