@@ -53,3 +53,21 @@ ng g c nav --dry-run
 
 /
 ng g s account-service
+
+/creates a homepage in client
+ng g c features/home
+
+/client register account
+ng g cfeatures/account/register
+
+/in client create members folder
+ng g c features/members/member-list
+ng g c features/members/member-detailed
+ng g c features/lists
+ng g c features/messages
+
+/create a toast service.
+ng g s toast-service --dry-run
+
+/
+ng g s init-service
