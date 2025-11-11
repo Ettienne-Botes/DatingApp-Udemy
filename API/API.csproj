@@ -13,5 +13,9 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.14.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Middleware/" />
+  </ItemGroup>
 
 </Project>
