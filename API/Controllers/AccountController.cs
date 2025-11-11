@@ -23,7 +23,7 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
         {
             DisplayName = registerDto.DisplayName,
             Email = registerDto.Email,
-            Passwordhash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(registerDto.Password)),
+            PasswordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(registerDto.Password)),
             PasswordSalt = hmac.Key
         };
 
@@ -46,7 +46,7 @@ public class AccountController(AppDbContext context, ITokenService tokenService)
 
         for (var i = 0; i < computedHash.Length; i++)
         {
-            if (computedHash[i] != user.Passwordhash[i]) return Unauthorized("invalid password.");
+            if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("invalid password.");
         }
 
         return user.ToDto(tokenService);
